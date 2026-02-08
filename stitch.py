@@ -39,7 +39,7 @@ def stitch_point_clouds(ply_files, voxel_size=0.01):
     return pcd_combined
 
 def main():
-    ply_files = sorted(glob.glob("left_new/frame_000*.ply"))  # Adjust path as needed
+    ply_files = sorted(glob.glob("pointclouds/frame_000*.ply"))  # Adjust path as needed
     result = stitch_point_clouds(ply_files, voxel_size=0.02)
 
     if result:
