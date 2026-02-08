@@ -1,0 +1,31 @@
+to install depn.
+
+sudo apt update
+sudo apt install git cmake build-essential libusb-1.0-0-dev python3-pip -y
+pip3 install numpy opencv-python
+
+
+clone and build libfreenect
+
+git clone https://github.com/OpenKinect/libfreenect.git
+cd libfreenect
+mkdir build && cd build
+
+cmake .. -DBUILD_PYTHON3=ON
+make
+sudo make install
+sudo ldconfig
+
+test the kinect
+
+lsusb
+
+
+commands
+
+freenect-glview	    Real-time OpenGL viewer (depth + RGB) ✅ most common
+freenect-chunkview	Shows small pieces ("chunks") of raw depth data
+freenect-cppview	C++ OpenGL test app with depth & RGB feeds
+freenect-regview	Shows registered (aligned) depth+RGB image
+freenect-tiltdemo	Demonstrates tilting the Kinect using the motor
+freenect-micview	Shows Kinect's microphone audio (not always supported)
